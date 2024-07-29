@@ -1,0 +1,334 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100vh; /* Full viewport height for responsive design */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Added background for better text readability */
+    padding: 20px; /* Added padding for better spacing */
+    border-radius: 10px; /* Rounded corners */
+    width: 80%; /* Responsive width */
+}
+
+.banner h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.banner p {
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 60px; /* Increase margin for better spacing */
+}
+
+h2 {
+    text-align: center;
+    font-size: 32px; /* Consistent font size */
+    color: #333;
+    margin-bottom: 20px; /* Space below heading */
+}
+
+p {
+    text-align: center;
+    font-size: 16px; /* Adjusted for readability */
+    color: #666;
+    margin: 0 20px; /* Add margin for better spacing */
+}
+
+/* Content Box */
+.content-box {
+    background-color: #fff;
+    padding: 30px; /* Increased padding */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    max-width: 1000px; /* Increased width */
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    font-size: 16px; /* Consistent font size */
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Gallery */
+.gallery-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Added gap for spacing */
+}
+
+.gallery-images img {
+    width: calc(25% - 20px); /* Adjusted width for 4 columns layout */
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Inquiry Form */
+.inquiry-form {
+    background-color: #fff;
+    padding: 25px; /* Increased padding */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.inquiry-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.inquiry-form label {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.inquiry-form input {
+    padding: 12px; /* Increased padding */
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.inquiry-form button {
+    padding: 12px; /* Increased padding */
+    font-size: 18px;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.inquiry-form button:hover {
+    background-color: #555;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 25px 0; /* Increased padding */
+    text-align: center;
+}
+
+.footer nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Added margin below navigation */
+}
+
+.footer nav ul li {
+    margin: 0 15px;
+}
+
+.footer nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer .social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer .social-icons a {
+    color: white;
+    margin: 0 15px;
+    font-size: 24px;
+}
+
+.footer .social-icons a:hover {
+    color: #ddd;
+}
+
+/* Reveal Animation */
+.reveal {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(50px);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Benefits Section */
+#benefits {
+    background-color: #fff;
+    padding: 50px 20px;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.benefits-list li {
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 250px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(25% - 40px); /* Responsive layout */
+}
+
+.benefits-list li i {
+    font-size: 40px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.benefits-list li h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.benefits-list li p {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+}
+
+.contact-button {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.contact-button .button {
+    background-color: #333;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.contact-button .button:hover {
+    background-color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 36px;
+    }
+
+    .banner p {
+        font-size: 18px;
+    }
+
+    .gallery-images img {
+        width: calc(50% - 20px); /* Adjusted width for 2 columns layout */
+    }
+
+    .benefits-list li {
+        flex: 1 1 calc(50% - 40px); /* Responsive layout for benefits section */
+    }
+}
+
+@media (max-width: 480px) {
+    .banner h1 {
+        font-size: 28px;
+    }
+
+    .banner p {
+        font-size: 16px;
+    }
+
+    .gallery-images img {
+        width: calc(100% - 20px); /* Full width for mobile layout */
+    }
+
+    .benefits-list li {
+        flex: 1 1 100%; /* Full width for mobile layout */
+    }
+
+    .contact-button .button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}

@@ -332,3 +332,61 @@ li {
         font-size: 16px;
     }
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 36px;
+    }
+
+    .banner p {
+        font-size: 18px;
+    }
+
+    .banner-image {
+        height: 70vh; /* Kurangi tinggi untuk layar lebih kecil */
+    }
+
+    .banner-text {
+        width: 90%; /* Sesuaikan lebar pada perangkat yang lebih kecil */
+    }
+
+    .gallery-images img {
+        width: calc(50% - 20px); /* 2 kolom untuk layar sedang */
+    }
+
+    .benefits-list li {
+        flex: 1 1 calc(50% - 40px); /* Responsive layout untuk section benefits */
+    }
+}
+
+@media (max-width: 480px) {
+    .banner h1 {
+        font-size: 28px;
+    }
+
+    .banner p {
+        font-size: 16px;
+    }
+
+    .banner-image {
+        height: 50vh; /* Kurangi tinggi untuk layar kecil */
+    }
+
+    .banner-text {
+        width: 95%; /* Lebar hampir penuh untuk perangkat mobile */
+    }
+
+    .gallery-images img {
+        width: calc(100% - 20px); /* Lebar penuh untuk layout mobile */
+    }
+
+    .benefits-list li {
+        flex: 1 1 100%; /* Layout full width untuk layout mobile */
+    }
+
+    .contact-button .button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}

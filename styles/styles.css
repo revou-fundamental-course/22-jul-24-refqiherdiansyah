@@ -42,7 +42,7 @@ nav ul li a:hover {
 }
 
 .banner-image {
-    width: fit-content;
+    width: 100%;
     height: 100vh; /* Full viewport height for responsive design */
     object-fit: cover; /* Maintain aspect ratio */
 }

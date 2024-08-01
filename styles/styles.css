@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #84c6dd;
 }
 
 header {
@@ -39,11 +39,12 @@ nav ul li a:hover {
     position: relative;
     text-align: center;
     color: white;
+    width: -webkit-fill-available;
 }
 
 .banner-image {
     width: 100%;
-    height: 100vh; /* Full viewport height for responsive design */
+    height: 100vh; /* Full viewport height for larger screens */
     object-fit: cover; /* Maintain aspect ratio */
 }
 
@@ -53,10 +54,10 @@ nav ul li a:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    background: rgba(0, 0, 0, 0.5); /* Added background for better text readability */
-    padding: 20px; /* Added padding for better spacing */
-    border-radius: 10px; /* Rounded corners */
-    width: 80%; /* Responsive width */
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
 }
 
 .banner h1 {
@@ -301,62 +302,12 @@ li {
         font-size: 18px;
     }
 
-    .gallery-images img {
-        width: calc(50% - 20px); /* Adjusted width for 2 columns layout */
-    }
-
-    .benefits-list li {
-        flex: 1 1 calc(50% - 40px); /* Responsive layout for benefits section */
-    }
-}
-
-@media (max-width: 480px) {
-    .banner h1 {
-        font-size: 28px;
-    }
-
-    .banner p {
-        font-size: 16px;
-    }
-
-    .gallery-images img {
-        width: calc(100% - 20px); /* Full width for mobile layout */
-    }
-
-    .benefits-list li {
-        flex: 1 1 100%; /* Full width for mobile layout */
-    }
-
-    .contact-button .button {
-        padding: 10px 20px;
-        font-size: 16px;
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .banner h1 {
-        font-size: 36px;
-    }
-
-    .banner p {
-        font-size: 18px;
-    }
-
     .banner-image {
-        height: 70vh; /* Kurangi tinggi untuk layar lebih kecil */
+        height: 70vh; /* Reduce height for smaller screens */
     }
 
     .banner-text {
-        width: 90%; /* Sesuaikan lebar pada perangkat yang lebih kecil */
-    }
-
-    .gallery-images img {
-        width: calc(50% - 20px); /* 2 kolom untuk layar sedang */
-    }
-
-    .benefits-list li {
-        flex: 1 1 calc(50% - 40px); /* Responsive layout untuk section benefits */
+        width: 90%; /* Adjust width on smaller devices */
     }
 }
 
@@ -370,23 +321,39 @@ li {
     }
 
     .banner-image {
-        height: 50vh; /* Kurangi tinggi untuk layar kecil */
+        height: 50vh; /* Reduce height for small screens */
+        object-position: top; /* Show top part of the image first */
     }
 
     .banner-text {
-        width: 95%; /* Lebar hampir penuh untuk perangkat mobile */
+        width: 95%; /* Nearly full width for mobile devices */
+        top: 30%; /* Move text slightly higher */
     }
+}
 
-    .gallery-images img {
-        width: calc(100% - 20px); /* Lebar penuh untuk layout mobile */
+/* Slideshow */
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    position: relative;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
     }
-
-    .benefits-list li {
-        flex: 1 1 100%; /* Layout full width untuk layout mobile */
-    }
-
-    .contact-button .button {
-        padding: 10px 20px;
-        font-size: 16px;
+    to {
+        opacity: 1;
     }
 }

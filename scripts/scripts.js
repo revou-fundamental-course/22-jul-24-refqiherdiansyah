@@ -16,6 +16,28 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Throttle function to improve performance on scroll events
+    function throttle(func, limit) {
+        let lastFunc;
+        let lastRan;
+        return function() {
+            const context = this;
+            const args = arguments;
+            if (!lastRan) {
+                func.apply(context, args);
+                lastRan = Date.now();
+            } else {
+                clearTimeout(lastFunc);
+                lastFunc = setTimeout(function() {
+                    if (Date.now() - lastRan >= limit) {
+                        func.apply(context, args);
+                        lastRan = Date.now();
+                    }
+                }, limit - (Date.now() - lastRan));
+            }
+        };
+    }
+
     // Smooth scrolling for anchor links
     function smoothScroll() {
         var anchorLinks = document.querySelectorAll('a[href^="#"]');
@@ -52,10 +74,28 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Event listeners
-    window.addEventListener("scroll", reveal);
-    window.addEventListener("load", smoothScroll);
+    window.addEventListener("scroll", throttle(reveal, 200));
+    smoothScroll();
     document.getElementById("travelForm").onsubmit = validateForm;
 
     // Initial reveal check
     reveal();
 });
+
+// Slideshow functionality
+let slideIndex = 0;
+
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 5000); // Change slide every 5 seconds
+}
+
+showSlides();
